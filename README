@@ -1,0 +1,89 @@
+# Velkommen 
+
+## Oversigt over Pipeline
+
+Denne pipeline er opdelt i flere trin (`Lag0`, `Lag1`, `Lag2`, `Lag3`), hvor hvert trin udfører specifikke opgaver. Nedenfor er en oversigt over trinnene:
+
+### `Lag0`
+1. Indlæs hoveddatasættet (`config.INPUT_FILE`) og yderligere data (`config.MANUELLE_TILFØJELSER`).
+2. Sammenkæd datasættene.
+3. Rens `TS`-kolonnen ved at fjerne ugyldige eller manglende værdier.
+4. Uddrag husnumre (`HUSNUMMER`) fra `VEJNAVN` og rens `VEJNAVN`-kolonnen.
+5. Standardiser forkortelser i `VEJNAVN`.
+6. Anvend batch-standardiseringer for specifikke `TS`-værdier.
+7. Flet stationsinformation (`config.STATION_INFO_FILE`) ind i datasættet.
+8. Opdater GPS-koordinater.
+9. Formater `DATO`-kolonnen til `YYYY-MM-DD`.
+10. Beregn `TOTAL`-kolonnen ved at summere timekolonner.
+11. Filtrer rækker med negative `TOTAL`-værdier.
+12. Omarranger kolonner baseret på `DESIRED_ORDER1`.
+13. Omdøb kategorier i `KATEGORI`-kolonnen.
+14. Omdøb "Cykler i alt" til "Cykler" baseret på specifikke betingelser.
+15. Fjern uønskede kategorier.
+16. Gem det behandlede datasæt til `config.OUTPUT_FILE_LAG0`.
+
+### `Lag1`
+1. Indlæs datasættet fra `Lag0`.
+2. Flet kategorier (del 1).
+3. Omdøb kategorier (del 2).
+4. Flet kategorier (del 2).
+5. Sikr korrekte kolonner for "Cykler".
+6. Omdøb kategorier (del 3).
+7. Gem det behandlede datasæt til `config.OUTPUT_FILE_LAG1`.
+
+### `Lag2`
+1. Indlæs datasættet fra `Lag1`.
+2. Omdøb kategorier (del 4).
+3. Flet kategorier (del 3).
+4. Gem det behandlede datasæt til `config.OUTPUT_LAG2`.
+
+### `Lag3`
+1. Indlæs datasættet fra `Lag2` og yderligere data (`config.AMGAGERMOTERVEJEN`).
+2. Omdøb kategorier (del 5).
+3. Flet kategorier (del 4).
+4. Omdøb kategorier (del 6).
+5. Omarranger kolonner (del 2).
+6. Tilføj data fra `AMAGERMOTERVEJEN`.
+7. Beregn estimater for `ÅDT` og `HDT`.
+8. Gem det endelige datasæt til `config.OUTPUT_LAG3`.
+
+## Filer
+
+### `cleaning_steps.py`
+Indeholder funktioner til datarensning og transformation, såsom:
+- `clean_ts`: Renser `TS`-kolonnen.
+- `extract_husnummer`: Uddrager husnumre fra `VEJNAVN`.
+- `standardize_abbreviations`: Standardiserer forkortelser i `VEJNAVN`.
+- `split_vejnavn_beskrivelse`: Splitter `VEJNAVN` i `VEJNAVN` og `BESKRIVELSE`.
+- `add_tællestedstype`: Tilføjer stationstype og koordinater.
+- `update_coordinates`: Opdaterer GPS-koordinater.
+- `format_date_column`: Formaterer `DATO`-kolonnen.
+- `merge_categories`: Fletter kategorier og aggregerer data.
+
+### `config.py`
+Definerer input/output-filstier og konstanter, der bruges i hele pipelinen, såsom:
+- Inputfiler: `INPUT_FILE`, `MANUELLE_TILFØJELSER`, `STATION_INFO_FILE`.
+- Outputfiler: `OUTPUT_FILE_LAG0`, `OUTPUT_FILE_LAG1`, `OUTPUT_LAG2`, `OUTPUT_LAG3`.
+- Standardiseringsordbøger: `STANDARDIZATION_SUBSTITUTIONS`, `STANDARDIZATIONS`.
+
+### `data_loading.py`
+hjælpefunktioner til indlæsning og lagring af data:
+- `load_data(filepath)`: Indlæser en CSV-fil i en `pandas` DataFrame.
+- `save_data(df, filepath)`: Gemmer en `pandas` DataFrame til en CSV-fil.
+
+### `main.ipynb`
+Implementerer pipelinen ved at hente funktionerne fra `cleaning_steps.py` og `data_loading.py`.
+
+## Sådan køres pipelinen
+
+1. Sørg for, at alle afhængigheder er installeret (f.eks. `pandas`).
+2. Placer inputfiler i de relevante mapper som specificeret i `config.py`.
+3. Kør pipeline-trinnene (`Lag0`, `Lag1`, `Lag2`, `Lag3`) i rækkefølge ved hjælp af `main.ipynb`-notebooken eller ved at eksekvere de tilsvarende Python-funktioner.
+
+## Output
+De forskellige lag gemmes som 
+`Output_files/16_lag0.csv`
+`Output_files/22_lag1.csv`
+`Output_files/25_lag2.csv`
+`Output_files/32_lag3.csv`
+
