@@ -1,0 +1,16 @@
+﻿Rute;Ejer;Placering;MastraID;Latitude;Longitude;Model;PrecipationID;WeatherID;Køreretning;Cyklister talt;Navn;Navn+Rute;ClimateID;C-Nr;ClimateID_Actual
+Allerødruten;Rudersdal;Øverødvej/Kongevejen;SC200545-1;55.81132576;12.47281989;Swarco udvidet barometer;5970;6135;90;485885;Øverødvej mod N;Allerødruten - Øverødvej mod N;10km_619_71;93;10km_619_71
+Allerødruten;Lyngby-Taarbæk;Lyngby Hovedgade/Hollandsvej;SC1730535-1;55.76566529;12.50913614;Swarco udvidet barometer;5970;6135;225;775117;Lyngby Hovedgade mod S;Allerødruten - Lyngby Hovedgade mod S;aaa1;93;10km_618_72
+Allerødruten;Gentofte;Lyngbyvej/ Merianvej;SC150505-1;55.73710808;12.53981721;Swarco udvidet barometer;5970;6135;135;2363597;Lyngbyvej mod S;Allerødruten - Lyngbyvej mod S;10km_618_72;93;10km_618_72
+Allerødruten;Allerød;Kongevejen ved Cirkel K;SC200545-2;55.86283312;12.39010674;Swarco udvidet barometer;5970;6135;315;397309;Kongevejen mod NV;Allerødruten - Kongevejen mod NV;aaa2;93;10km_619_71
+Farum-Allerødruten;Allerød;Ny Møllevej;SC5131282;55.867333;12.361806;Swarco udvidet barometer;5970;6135;90;79381;Ny Møllevej mod N;Farum-Allerødruten - Ny Møllevej mod N;aaa3;71;10km_619_71
+Farumruten;Furesø;Farum Bytorv;SC200520-1;55.81325;12.376222;Swarco;5970;6135;270;291322;Farum Bytorv mod N;Farumruten - Farum Bytorv mod N;aaa4;95;10km_619_71
+Frederikssundruten;Herlev;Herlev Hovedgade, ved M3;SC150503-2;55.71828245;12.45404386;Swarco udvidet barometer;5970;6135;90;1507991;Herlev Hovedgade mod V;Frederikssundruten - Herlev Hovedgade mod V;10km_618_71;97;10km_618_71
+Frederikssundruten;Herlev;Herlev Hovedgade v Fitness World (retning mod København);SC150503-1;55.72572832;12.41474527;Swarco udvidet barometer;5970;6135;0;955948;Herlev Hovedgade mod Ø;Frederikssundruten - Herlev Hovedgade mod Ø;aaa5;97;10km_618_71
+Frederikssundruten;Ballerup;Malmparken st.;SC150503-3;55.728694;12.386556;Swarco udvidet barometer;5970;6135;135;782837;Malmparken st. mod Ø;Frederikssundruten - Malmparken st. mod Ø;aaa6;97;10km_618_71
+Frederikssundruten;Ballerup;Måløv st.;SC522-1;55.7476658;12.31911248;Swarco udvidet barometer;5970;6135;0;335000;Måløv st. mod SØ;Frederikssundruten - Måløv st. mod SØ;10km_618_70;97;10km_618_70
+Ishøjruten;Hvidovre;Friheden st.;SC150508-1;55.6285;12.483278;Swarco basis barometer;5970;6135;180;833343;Friheden st. mod SV;Ishøjruten - Friheden st. mod SV;10km_617_71;77;10km_617_71
+Ring 4-ruten;Gladsaxe Kommune;Bindeledet;SC150512-1;55.764639;12.455722;Swarco udvidet barometer;5970;6135;45;634834;Bindeledet mod V;Ring 4-ruten - Bindeledet mod V;aaa7;84;10km_618_71
+Roskilderuten;Roskilde;Københavnsvej, ved nr. 13 – Indadgående mod Roskilde;CB26544081;55.640972;12.096528;ITS Teknik – Cykelbarometer CB675-LED;5970;6135;0;0;Københavnsvej. 13 mod V;Roskilderuten - Københavnsvej. 13 mod V;aaa8;75;Ingen endnu
+Roskilderuten;Roskilde;Københavnsvej, ved nr. 148 – Udadgående mod KBH;CB26544083;55.64271917;12.11882223;ITS Teknik – Cykelbarometer CB675-LED;5970;6135;0;0;Københavnsvej. 148 mod Ø;Roskilderuten - Københavnsvej. 148 mod Ø;aaa9;75;Ingen endnu
+Værløseruten;Furesø;Fiskebækvej v. Væreløse st;SC150520-1;55.7825;12.370278;Swarco udvidet barometer;5970;6135;45;509758;Værløse st. mod N;Værløseruten - Værløse st. mod N;aaa0;82;10km_618_71
